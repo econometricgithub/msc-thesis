@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SNS Myanmar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<style>
+    body{
+     background: #045B62;
+
+      margin: 0;
+     font-size:18px;
+     font-family: Times New Roman;
+     font-color: #005CB9;
+}
+.p{
+ color: white;
+}
+.suggestion{
+  background-color: CadetBlue;
+  width: 1000px;
+  border: 5px solid dark;
+  padding: 25px;
+  margin: 15px;
+}
+.model {
+  background-color: LightBlue;
+  width: 700px;
+  border: 5px solid blue;
+  padding: 30px;
+  margin: 20px;
+}
+</style>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="{{ url_for('home')}}">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                         <li class="nav-item"><a class="nav-link" href="{{ url_for('background') }}">Background</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('descriptive')}}">Data Summary & Descriptive </a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('sdamodel')}}">Statistical Data Anlysis</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+    <br>
+    <center>
+        <div class="content" style="position: absolute;top:70px; left:30px; right:20px; background: rgb(0, 0, 0);background: rgba(0, 0, 0, 0.5);color: #f1f1f1;width: 96%;padding: 10px;">
+            <h2 style="color:#fcec00;font-size: 30px;">
+                Analysing the Econometric Models for the Impact of Social Networking Sites Usage on Expressive Political Participation in Myanmar
+            </h2></div>
+        </div>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+        <div class="suggestion">
+        <p style=" color: white; text-align: justify;">Survey Dataset အပေါ် မူတည်၍ မြန်မာနိုင်ငံတွင် ဆိုရှယ်နက်ဝပ် အသုံးပြုမှု့သည် နိုင်ငံရေးအပေါ်  ဘယ်လောက်သက်ရောက်မှု့ ရှိလဲဆိုတာ လေ့လာ ဆန်းစစ်ရန် Econometric Analysis မှ Simple linear Regression
+        နှင့် Multiple Linear Regression Models နှစ်ခုထဲမှ တစ်ခုကို ရွေးချယ်၍ Analysis လုပ်နိုင်ပါသည်။</p>
+        </div>
+    </center>
+    <center>
+    <div class="model">
+        <form action="{{ url_for('sdamodel') }}", method="post">
+            <h2>Chose One Model</h2>
+                <select id="model" name="model" style="width: 400px; height:50px;" >
+                  <option value="slr">Simple Linear Regression</option>
+                  <option value="mlr">Multiple Linear Regression</option>
+                </select>
+            <br><br>
+         <input type="submit" class="btn btn-success " value="Submit">
+        </form>
+    </div>
+    </center>
+    </body>
+</html>
